@@ -52,3 +52,66 @@ AI_Agent_RAG/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+
+User
+  ↓
+Streamlit Web UI
+  ↓
+AI Agent
+  ├── Calculator Tool
+  │       ↓
+  │    Result
+  │
+  └── RAG System
+          ↓
+    Query Embedding
+          ↓
+       ChromaDB
+          ↓
+   Relevant PDF Chunks
+          ↓
+       Groq LLM
+          ↓
+      AI Answer
+
+      ## 🏗️ System Architecture
+
+```text
+                    User
+                      ↓
+              Streamlit Web UI
+                      ↓
+                  AI Agent
+                 ↙        ↘
+        Calculator Tool    RAG System
+               ↓                ↓
+          Calculation     Query Embedding
+                                ↓
+                            ChromaDB
+                                ↓
+                       Relevant PDF Chunks
+                                ↓
+                           Groq LLM
+                                ↓
+                           AI Answer
+
+                           RAG Pipeline
+PDF Documents
+      ↓
+PDF Loading
+      ↓
+Text Chunking
+      ↓
+Sentence Transformers
+      ↓
+Embeddings
+      ↓
+ChromaDB
+      ↓
+Semantic Retrieval
+      ↓
+Relevant Context
+      ↓
+Groq LLM
+      ↓
+Final Answer
